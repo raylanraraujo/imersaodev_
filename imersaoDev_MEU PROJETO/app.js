@@ -2,7 +2,7 @@ function pesquisar() {
     // Obtém a seção HTML onde os resultados da pesquisa serão renderizados
     let section = document.getElementById("resultados-pesquisa")
 
-    let campoPesquisa = document.getElementById("campo-pesquisa").value
+    let campoPesquisa = document.getElementById("campo-pesquisa").value.trim()
 
     if (!campoPesquisa) {
         section.innerHTML = "<p>Você precisa digitar algo sobre a música.</p>"
