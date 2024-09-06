@@ -16,9 +16,13 @@ function pesquisar() {
 
     // Itera sobre cada objeto de música no array de dados
     for (let dado of dados) {
-        titulo = dado.titulo.toLowerCase()
+        // Todas as propriedades relevantes em uma única string concatenada
+        const camposConcat = `${dado.titulo} ${dado.artista} ${dado.album} ${dado.lancamento} ${dado.genero} ${dado.tags}`;
+        // Expressão regular para realizar a pesquisa, ignorando case
+        const regex = new RegExp(campoPesquisa, 'i');
 
-        if (titulo.includes(campoPesquisa)) {
+
+        if (regex.test(camposConcat)) {
             // Cria um novo elemento div para cada resultado 
             resultado += `
             <div class="resultado">
