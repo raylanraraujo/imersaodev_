@@ -17,7 +17,7 @@ function pesquisar() {
     // Itera sobre cada objeto de música no array de dados
     for (let dado of dados) {
         // Todas as propriedades relevantes em uma única string concatenada
-        const camposConcat = `${dado.titulo} ${dado.artista} ${dado.album} ${dado.lancamento} ${dado.genero} ${dado.tags}`;
+        const camposConcat = `${dado.titulo} ${dado.artista} ${dado.album} ${dado.lancamento} ${dado.genero} ${dado.tags} ${dado.letra}`;
         // Expressão regular para realizar a pesquisa, ignorando case
         const regex = new RegExp(campoPesquisa, 'i');
 
