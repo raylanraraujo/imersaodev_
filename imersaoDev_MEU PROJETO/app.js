@@ -2,13 +2,25 @@ function pesquisar() {
     // Obtém a seção HTML onde os resultados da pesquisa serão renderizados
     let section = document.getElementById("resultados-pesquisa")
 
+    let campoPesquisa = document.getElementById("campo-pesquisa").value
+
+    if (!campoPesquisa) {
+        section.innerHTML = "<p>Você precisa digitar algo sobre a música.</p>"
+        return
+    }
+
+    campoPesquisa = campoPesquisa.toLowerCase()
     // String que armazenará o HTML gerado para todos os resultados
-    let resultado = ""
+    let resultado = "";
+    let titulo = "";
 
     // Itera sobre cada objeto de música no array de dados
     for (let dado of dados) {
-        // Cria um novo elemento div para cada resultado
-        resultado += `
+        titulo = dado.titulo.toLowerCase()
+
+        if (titulo.includes(campoPesquisa)) {
+            // Cria um novo elemento div para cada resultado 
+            resultado += `
             <div class="resultado">
                 <div id="infmusic" class="flex-container">
                     <div class="imgmusic">
@@ -36,7 +48,12 @@ function pesquisar() {
                     <a href=${dado.link} target="_blank"> Visão geral &rarr;</a>
                 </div>
             </div>
-        `
+        `;
+        }              
+    }
+
+    if (!resultado) {
+        resultado = "<p>Não foi encontrado nenhum resultado.</p>"
     }
     // Atribui o HTML gerado à seção de resultados
     section.innerHTML = resultado

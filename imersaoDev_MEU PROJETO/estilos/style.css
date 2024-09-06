@@ -54,6 +54,12 @@ section input {
     box-sizing: border-box; /* Inclui padding e border na largura total */
 }
 
+p.explicacao{
+    font-size: 0.8em;
+    margin-bottom: 16px;
+    color: #9b9fac;
+    
+}
 /* Estiliza os botões dentro das seções */
 section button {
     padding: 0.8rem 1.2rem; /* Espaçamento interno do botão */
